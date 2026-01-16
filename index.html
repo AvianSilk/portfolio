@@ -1,149 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resumé</title>
-  </head>
-  <body>
-    <h1>Venkata Adapala</h1>
-    <img
-      src="assets/images/Profile_Photo.jpg"
-      width="150"
-      alt="My profile photo"
-    />
-    <h2>Summary</h2>
-    I am a freshman at
-    <a href="https://en.wikipedia.org/wiki/University_of_Toronto_Mississauga"
-      >University of Toronto, Mississauga</a
-    >. I am interested in various programming-related fields like:
-    <ul>
-      <li>Game Development</li>
-      <li>Web Development</li>
-      <li>Robotics Programming</li>
-    </ul>
-    <hr />
-    <h2>Education</h2>
-    I graduated from high school at
-    <a href="https://gws.hdsb.ca/">Garth Webb Secondary School</a> in 2023.
-    <h3>Awards and Certifications</h3>
-    <ul>
-      <li>
-        <b>Ontario Scholar</b>
-        <ul>
-          <li>
-            Graduated from high school as an
-            <a href="https://en.wikipedia.org/wiki/Ontario_Scholar"
-              >Ontario Scholar</a
-            >
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <hr />
-    <h2>Programming Experience</h2>
-    <ul>
-      <li>
-        <b>Control Systems Sub-team - FIRST Robotics Competition</b>
-        <p><i>October 2022 - June 2023</i></p>
-        <ul>
-          <li>
-            Was a control-systems programmer on
-            <a href="https://sites.google.com/hdsb.ca/garthwebrobotics/home"
-              >FRC Team 5409</a
-            >
-          </li>
-          <li>
-            Implemented functionalities on the robots such as:
-            <ul>
-              <li>Visual target detection using advanced cameras</li>
-              <li>Automatic target-based alignment</li>
-            </ul>
-            <br />
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <h3>Projects</h3>
-    <ul>
-      <li>
-        <b>"Whirlybird" - A Fun Casual Game</b>
-        <ul>
-          <p>
-            <li>
-              A Python-based recreation of the similarly named game on Google
-              Play
-            </li>
-            <li>
-              The game objective is to jump as high as possible while avoiding
-              obstacles
-            </li>
-            <li>
-              <a
-                href="https://github.com/HDSB-GWS-Brooks-202122-ICS3-02/final-project-Venkata-Adapala"
-                >Link to the GitHub Repository</a
-              >
-            </li>
-          </p>
-        </ul>
-      </li>
-      <br />
-      <li>
-        <b>Wordle</b>
-        <ul>
-          <p>
-            <li>A Java-based recreation of the famous Wordle game.</li>
-            <li>
-              The objective is to guess the 5-letter word with every guess
-              acting as a clue.
-            </li>
-            <li>
-              <a
-                href="https://github.com/HDSB-GWS-Brooks-202223-ICS4-03/javafx-assignment-AvianSilk"
-                >Link to the GitHub Repository</a
-              >
-            </li>
-          </p>
-        </ul>
-      </li>
-    </ul>
-    <br />
-    <hr />
-    <h2>Other Experience</h2>
-    <ul>
-      <li>
-        <b>Volunteer - West Oak Village</b>
-        <p><i>June 2022 - September 2022</i></p>
-        <ul>
-          <li>
-            Volunteered as a gardener for
-            <a
-              href="https://www.reveraliving.com/find-a-residence/ontario/oakville/west-oak-village/"
-              >West Oak Village</a
-            >, a long term care home
-          </li>
-          <li>
-            Took care of huge lawns by weeding, watering and planting and
-            setting up garden equipment
-          </li>
-        </ul>
-      </li>
-      <br />
-      <li><b>Volunteer - Halton Multicultural Council</b></li>
-      <p><i>July 2022 - August 2022</i></p>
-      <ul>
-        <li>
-          Volunteered in various events such as the
-          <a
-            href="https://hmcconnections.com/hmc-event/multiculturalism-day-2023/"
-            >Multiculturalism Day</a
-          >
-        </li>
-      </ul>
-    </ul>
-    <hr />
-    <h2>Links</h2>
-    <b><a href="https://github.com/AvianSilk">GitHub</a></b>
-    <hr />
-  </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Venkata Maruthi Sowmyanath Adapala | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <h1 class="name">Venkata Maruthi Sowmyanath Adapala</h1>
+                <p class="role">Software Developer • Embedded Programmer</p>
+                <img src="Headshot.jpg" width="210" alt="My profile photo" />
+            </div>
+
+            <nav class="links">
+                <a href="#summary">Summary</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#certifications">Certifications & Projects</a>
+                <a href="#awards">Awards & Accomplishments</a>
+            </nav>
+
+            <div class="contact">
+                <h3>Contact</h3>
+                (+1) 365-888-6606
+                <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+                <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/venkata-adapala/">LinkedIn</a>
+            </div>
+
+            <footer class="sidebar-foot">© <span id="year"></span> Venkata</footer>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button id="menuToggle" class="menu-btn" aria-label="Toggle menu">☰</button>
+                
+            </header>
+
+            <section id="summary" class="card">
+                <h2>CANDIDATE SUMMARY</h2>
+                <p>Third year Computer Science Specialist proficient in Java, Python and C; known for persevering
+                    through coding difficulties and actively engaging
+                    in meaningful teamwork. Looking for roles full-stack roles. Fluent in English.</p>
+            </section>
+
+            <section id="education" class="card">
+                <h2>EDUCATION</h2>
+                <div class="edu-item">
+                    <h3>Honours Bachelors of Science (H.Bsc.), Computer Science</h3>
+                    <p class="muted">University of Toronto Mississauga | September 2023 &ndash; Present</p>
+                    <p>Expected graduation with <i>UTM Co-op Internship Program</i>: <b>May 2028</b></p>
+                    <p>Relevant Courses: Software Design, Data Structures and Analysis, Introduction to Web Development,
+                        Introduction to Databases</p>
+                </div>
+            </section>
+
+            <section id="skills" class="card">
+                <h2>SKILLS</h2>
+                <div class="skills-grid">
+                    <div>
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C</li>
+                            <li>HTML</li>
+                            <li>RISC</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Frameworks</h4>
+                        <ul>
+                            <li>JavaFX</li>
+                            <li>Pygame</li>
+                            <li>Spring</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Tools/Platforms</h4>
+                        <ul>
+                            <li>Git</li>
+                            <li>Amazon Web Services</li>
+                            <li>MiPs</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="card">
+                <h2>EXPERIENCE</h2>
+                <div class="exp-item">
+                    <h3>FIRST Robotics Competition, Programming Sub-team – Team 5409</h3>
+                    <p class="muted">Garth Webb Secondary School, Oakville, ON — September 2022 &ndash; April 2023</p>
+                    <ul>
+                        <li>Wrote highly sophisticated code that controls various aspects of a robot such as Limelight
+                            cameras, solenoids, Roborios, etc.</li>
+                        <li>Mainly wrote code in Java using the WPILib code base</li>
+                        <li>Collaborated with a huge team of like-minded students and highly experienced mentors</li>
+                        <li>Performed well in local and provincial level tournaments to qualify and participate in the
+                            World Championships in Houston, TX.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="certifications" class="card">
+                <h2>CERTIFICATIONS AND PROJECTS</h2>
+                <div class="exp-item">
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p class="muted">July 2025</p>
+                    <ul>
+                        <li>Certified by <b>Amazon</b>, this certificate recognizes my knowledge of the core services,
+                            security, pricing, and basic architecture of AWS.</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <h3>Oracle Certified Associate, Java SE 8 Programmer</h3>
+                    <p class="muted">July 2025</p>
+                    <ul>
+                        <li>Certified by the multinational corporation <b>Oracle</b>, this certificate recognizes my
+                            knowledge of object-oriented concepts, the Java
+                            programming language and general knowledge of Java platforms and technologies.</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <h3>Interactive Graphing Calculator</h3>
+                    <p class="muted">April 2022 – June 2022</p>
+                    <ul>
+                        <li>Developed a user-friendly software application using Java, object-oriented programming and
+                            the JavaFX framework.</li>
+                        <li>The application is capable of graphing multiple types of mathematical functions, from
+                            arithmetic to logarithmic and hyperbolic.</li>
+                        <li>Cleverly used Third Party tools such as <i>Scenebuilder</i> to create the user interface
+                            quickly.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="awards" class="card">
+                <h2>AWARDS AND ACCOMPLISHMENTS</h2>
+                <div class="exp-item">
+                    <h3>Dean’s List Scholar</h3>
+                    <p class="muted">University of Toronto Mississauga, Mississauga, ON - June 2024 &amp; 2025</p>
+                    <ul>
+                        <li>Award recognizing exceptional academic achievement in courses (given to students with a 3.5+
+                            cGPA).</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <h3>Ontario Scholar</h3>
+                    <p class="muted">Garth Webb Secondary School, ON - June 2022</p>
+                    <ul>
+                        <li>Award presented by the <b>Ontario Provincial Government</b> recognizing commendable academic
+                            achievement (given to students with a 80%+
+                            average).</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
