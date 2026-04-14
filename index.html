@@ -1,177 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Venkata Maruthi Sowmyanath Adapala | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <aside class="sidebar">
-            <div class="profile">
-                <h1 class="name">Venkata Maruthi Sowmyanath Adapala</h1>
-                <p class="role">Software Developer • Embedded Programmer</p>
-                <img src="assets/images/Headshot.jpg" width="210" alt="My profile photo" />
+      <aside class="sidebar">
+        <div class="profile">
+          <h1 class="name">Venkata Maruthi Sowmyanath Adapala</h1>
+          <p class="role">Software Developer • Embedded Programmer</p>
+          <img
+            src="assets/images/Headshot.jpg"
+            width="210"
+            alt="My profile photo"
+          />
+        </div>
+
+        <nav class="links">
+          <a href="#summary">Summary</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#certifications">Certifications & Projects</a>
+          <a href="#awards">Awards & Accomplishments</a>
+        </nav>
+
+        <div class="contact">
+          <h3>Contact</h3>
+          (+1) 365-888-6606
+          <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+          <a href="https://github.com/AvianSilk" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a href="https://www.linkedin.com/in/venkata-adapala/">LinkedIn</a>
+        </div>
+
+        <footer class="sidebar-foot">© <span id="year"></span> Venkata</footer>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button id="menuToggle" class="menu-btn" aria-label="Toggle menu">
+            ☰
+          </button>
+        </header>
+
+        <section id="summary" class="card">
+          <h2>CANDIDATE SUMMARY</h2>
+          <p>
+            Third year Computer Science Specialist proficient in Python, Java
+            and JavaScript and certified in AWS. Recognized for persistence in
+            coding challenges and strong collaboration within team environments.
+            Open to Software and Web Development Internships.
+          </p>
+        </section>
+
+        <section id="education" class="card">
+          <h2>EDUCATION</h2>
+          <div class="edu-item">
+            <h3>Honours Bachelors of Science (H.Bsc.), Computer Science</h3>
+            <p class="muted">
+              University of Toronto Mississauga | September 2023 &ndash; Present
+            </p>
+            <p>
+              Expected graduation with <i>UTM Co-op Internship Program</i>:
+              <b>May 2028</b>
+            </p>
+            <p>
+              Relevant Courses: Software Engineering, Data Structures and
+              Analysis, Web Development, Databases
+            </p>
+          </div>
+        </section>
+
+        <section id="skills" class="card">
+          <h2>SKILLS</h2>
+          <div class="skills-grid">
+            <div>
+              <h4>Programming Languages / Databases</h4>
+              <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>C</li>
+                <li>RiSC</li>
+                <li>HTML</li>
+                <li>SQLite</li>
+                <li>PostgreSQL</li>
+              </ul>
             </div>
 
-            <nav class="links">
-                <a href="#summary">Summary</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#certifications">Certifications & Projects</a>
-                <a href="#awards">Awards & Accomplishments</a>
-            </nav>
-
-            <div class="contact">
-                <h3>Contact</h3>
-                (+1) 365-888-6606
-                <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
-                <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/venkata-adapala/">LinkedIn</a>
+            <div>
+              <h4>Frameworks / Tools</h4>
+              <ul>
+                <li>Claude</li>
+                <li>JavaFX</li>
+                <li>Node.js</li>
+                <li>Next.js</li>
+                <li>React</li>
+                <li>Flask</li>
+                <li>Docker</li>
+                <li>AWS</li>
+                <li>Git</li>
+                <li>GitHub Actions</li>
+                <li>MiPS</li>
+              </ul>
             </div>
+          </div>
+        </section>
 
-            <footer class="sidebar-foot">© <span id="year"></span> Venkata</footer>
-        </aside>
+        <section id="experience" class="card">
+          <h2>EXPERIENCE</h2>
+          <div class="exp-item">
+            <h3>
+              FIRST Robotics Competition (FRC), Programming Sub-team –
+              <a href="https://www.team5409.ca/" target="_blank" rel="noopener"
+                >Team 5409</a
+              >
+            </h3>
+            <p class="muted">
+              Garth Webb Secondary School, Oakville, ON — September 2022 &ndash;
+              April 2023
+            </p>
+            <ul>
+              <li>
+                Wrote sophisticated <b>Java</b> code that controls various
+                aspects of a robot (Limelight cameras, solenoids, Roborios,
+                etc.)
+              </li>
+              <li>
+                Worked with seven other developers and was guided by mentors
+                with decades of experience
+              </li>
+              <li>
+                Qualified for and competed against the top 18% of teams
+                worldwide at the <b>World Championships</b> of FRC in
+                <b>Houston, TX</b>.
+              </li>
+            </ul>
+          </div>
+        </section>
 
-        <main class="main">
-            <header class="topbar">
-                <button id="menuToggle" class="menu-btn" aria-label="Toggle menu">☰</button>
+        <section id="certifications" class="card">
+          <h2>PROJECTS &amp; CERTIFICATIONS</h2>
 
-            </header>
+          <div class="exp-item">
+            <h3>
+              <a
+                href="https://github.com/AvianSilk/Radio-Calico"
+                target="_blank"
+                rel="noopener"
+                >Radio Calico</a
+              >
+            </h3>
+            <p class="muted">Personal Project — April 2026 &ndash; Present</p>
+            <ul>
+              <li>
+                Designed and built a <b>full-stack web app</b> that streams a
+                live HLS audio broadcast with real-time now-playing metadata,
+                album art, song history, and a per-user like/dislike rating
+                system.
+              </li>
+              <li>
+                Multi-stage Docker build separating dev, production API, and
+                nginx images; vanilla JS frontend with HLS.js lazy-loaded on
+                first interaction for near-instant initial page load.
+              </li>
+              <li>
+                Self-hosted WOFF2 fonts, .webp image fallbacks, and timestamp
+                cache-busting on album art fetches for page-speed optimization.
+              </li>
+              <li>
+                Jest test suite covering backend API routes (via pg-mem
+                in-memory Postgres) and frontend DOM behavior (jsdom + fake
+                timers), with GitHub Actions CI running tests and a 4-stage
+                security scan (npm audit, Trivy, Semgrep, Gitleaks) on every
+                push.
+              </li>
+              <li>
+                <b>Claude</b> was used as the primary development partner across
+                every stage of the project, including initial architecture
+                prototyping, Express routing, PostgreSQL schema design, nginx
+                configuration, frontend performance optimization, the full Jest
+                test suite, multi-stage Docker and Compose setup, GitHub Actions
+                CI/CD, and project documentation.
+              </li>
+            </ul>
+          </div>
 
-            <section id="summary" class="card">
-                <h2>CANDIDATE SUMMARY</h2>
-                <p>Third year Computer Science Specialist proficient in Java, Python and C; known for persevering
-                    through coding difficulties and actively engaging
-                    in meaningful teamwork. Looking for roles full-stack roles. Fluent in English.</p>
-            </section>
+          <div class="exp-item">
+            <h3>
+              <a
+                href="https://github.com/AvianSilk/SmartSyllabus"
+                target="_blank"
+                rel="noopener"
+                >SmartSyllabus</a
+              >
+            </h3>
+            <p class="muted">
+              University of Toronto, Mississauga — January 2026 &ndash; Present
+            </p>
+            <ul>
+              <li>
+                Worked with five other developers to build a
+                <b>full-stack web app</b> for university students using
+                <b>React 18</b>, <b>Flask</b>, and <b>SQLite</b>. Features
+                include course grade tracking, an interactive calendar with
+                <code>.ics</code> export, a workload notification system, and a
+                Pomodoro focus timer.
+              </li>
+              <li>
+                Used <b>Gemini 2.5 Flash</b> to parse uploaded PDF syllabi and
+                extract assessments, weights, deadlines, and lecture schedules,
+                which are stored in SQLite and reflected in the calendar
+                automatically.
+              </li>
+              <li>
+                Built a REST API with 27 endpoints for authentication, course
+                management, calendar, and dashboard features, secured with
+                <b>JWT</b> access/refresh tokens, <i>SHA-256</i> password
+                hashing, and <i>SMTP</i>-based password reset.
+              </li>
+              <li>
+                Used <i>React Context</i> for auth state and protected
+                client-side routing; built reusable components with a CSS custom
+                property design system, <b>FullCalendar</b>, and
+                <b>Chart.js</b> for grade progression graphs.
+              </li>
+            </ul>
+          </div>
 
-            <section id="education" class="card">
-                <h2>EDUCATION</h2>
-                <div class="edu-item">
-                    <h3>Honours Bachelors of Science (H.Bsc.), Computer Science</h3>
-                    <p class="muted">University of Toronto Mississauga | September 2023 &ndash; Present</p>
-                    <p>Expected graduation with <i>UTM Co-op Internship Program</i>: <b>May 2028</b></p>
-                    <p>Relevant Courses: Software Design, Data Structures and Analysis, Introduction to Web Development,
-                        Introduction to Databases</p>
-                </div>
-            </section>
+          <div class="exp-item">
+            <h3>
+              <a
+                href="https://www.credly.com/badges/1d6ad7a2-d130-4144-a106-b67f6eaf83ff/public_url"
+                target="_blank"
+                rel="noopener"
+                >AWS Certified Cloud Practitioner</a
+              >
+            </h3>
+            <p class="muted">January 2026</p>
+            <ul>
+              <li>
+                Certified by the multinational technology company <b>Amazon</b>,
+                this certificate recognizes my knowledge of the core services,
+                security, pricing, and basic architecture of Amazon Web Services
+                (AWS).
+              </li>
+            </ul>
+          </div>
 
-            <section id="skills" class="card">
-                <h2>SKILLS</h2>
-                <div class="skills-grid">
-                    <div>
-                        <h4>Programming Languages</h4>
-                        <ul>
-                            <li>Java</li>
-                            <li>Python</li>
-                            <li>C</li>
-                            <li>HTML</li>
-                            <li>RISC</li>
-                        </ul>
-                    </div>
+          <div class="exp-item">
+            <h3>
+              <a
+                href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DC06C202E5893F1482C2C084CE3075642F5B4B09B7A5D0A1B946CA68EA220D0"
+                target="_blank"
+                rel="noopener"
+                >Oracle Certified Associate, Java SE 8 Programmer</a
+              >
+            </h3>
+            <p class="muted">July 2025</p>
+            <ul>
+              <li>
+                Certified by the multinational corporation <b>Oracle</b>, this
+                certificate recognizes my knowledge of object-oriented concepts,
+                the Java programming language and general knowledge of Java
+                platforms and technologies.
+              </li>
+            </ul>
+          </div>
+        </section>
 
-                    <div>
-                        <h4>Frameworks</h4>
-                        <ul>
-                            <li>JavaFX</li>
-                            <li>Pygame</li>
-                            <li>Spring</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4>Tools/Platforms</h4>
-                        <ul>
-                            <li>Git</li>
-                            <li>Amazon Web Services</li>
-                            <li>MiPs</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experience" class="card">
-                <h2>EXPERIENCE</h2>
-                <div class="exp-item">
-                    <h3>FIRST Robotics Competition, Programming Sub-team – Team 5409</h3>
-                    <p class="muted">Garth Webb Secondary School, Oakville, ON — September 2022 &ndash; April 2023</p>
-                    <ul>
-                        <li>Wrote highly sophisticated code that controls various aspects of a robot such as Limelight
-                            cameras, solenoids, Roborios, etc.</li>
-                        <li>Mainly wrote code in Java using the WPILib code base</li>
-                        <li>Collaborated with a huge team of like-minded students and highly experienced mentors</li>
-                        <li>Performed well in local and provincial level tournaments to qualify and participate in the
-                            World Championships in Houston, TX.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="certifications" class="card">
-                <h2>CERTIFICATIONS AND PROJECTS</h2>
-                <div class="exp-item">
-                    <h3><a style="color: black;"
-                            href="https://www.credly.com/badges/1d6ad7a2-d130-4144-a106-b67f6eaf83ff/public_url">AWS
-                            Certified Cloud Practitioner</a></h3>
-                    <p class="muted">January 2026</p>
-                    <ul>
-                        <li>Certified by <b>Amazon</b>, this certificate recognizes my knowledge of the core services,
-                            security, pricing, and basic architecture of AWS.</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <h3><a style="color: black;"
-                            href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DC06C202E5893F1482C2C084CE3075642F5B4B09B7A5D0A1B946CA68EA220D0">Oracle
-                            Certified Associate, Java SE 8 Programmer</a></h3>
-                    <p class="muted">July 2025</p>
-                    <ul>
-                        <li>Certified by the multinational corporation <b>Oracle</b>, this certificate recognizes my
-                            knowledge of object-oriented concepts, the Java
-                            programming language and general knowledge of Java platforms and technologies.</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <h3>Interactive Graphing Calculator</h3>
-                    <p class="muted">April 2022 – June 2022</p>
-                    <ul>
-                        <li>Developed a user-friendly software application using Java, object-oriented programming and
-                            the JavaFX framework.</li>
-                        <li>The application is capable of graphing multiple types of mathematical functions, from
-                            arithmetic to logarithmic and hyperbolic.</li>
-                        <li>Cleverly used Third Party tools such as <i>Scenebuilder</i> to create the user interface
-                            quickly.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="awards" class="card">
-                <h2>AWARDS AND ACCOMPLISHMENTS</h2>
-                <div class="exp-item">
-                    <h3>Dean’s List Scholar</h3>
-                    <p class="muted">University of Toronto Mississauga, Mississauga, ON - June 2024 &amp; 2025</p>
-                    <ul>
-                        <li>Award recognizing exceptional academic achievement in courses (given to students with a 3.5+
-                            cGPA).</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <h3>Ontario Scholar</h3>
-                    <p class="muted">Garth Webb Secondary School, ON - June 2022</p>
-                    <ul>
-                        <li>Award presented by the <b>Ontario Provincial Government</b> recognizing commendable academic
-                            achievement (given to students with a 80%+
-                            average).</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
+        <section id="awards" class="card">
+          <h2>AWARDS &amp; ACCOMPLISHMENTS</h2>
+          <div class="exp-item">
+            <h3>Dean’s List Scholar</h3>
+            <p class="muted">
+              University of Toronto Mississauga, Mississauga, ON — June 2024
+              &amp; 2025
+            </p>
+            <ul>
+              <li>
+                Award recognizing exceptional academic achievement in courses
+                (given to students with a 3.5+ cGPA).
+              </li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <h3>Ontario Scholar</h3>
+            <p class="muted">Garth Webb Secondary School, ON - June 2022</p>
+            <ul>
+              <li>
+                Award presented by the
+                <b>Ontario Provincial Government</b> recognizing commendable
+                academic achievement (given to students with a 80%+ average).
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
