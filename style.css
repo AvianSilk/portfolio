@@ -20,6 +20,9 @@ html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-
 .links{display:flex;flex-direction:column;margin-top:18px}
 .links a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 0;border-left:3px solid transparent;padding-left:10px}
 .links a:hover{background:rgba(255,255,255,0.06);border-left-color:rgba(255,255,255,0.18);border-radius:6px}
+.resume-links{margin-top:18px;background:rgba(255,255,255,0.07);padding:12px;border-radius:10px}
+.resume-links h3{margin:0 0 8px 0}
+.resume-links a{display:block;color:white;text-decoration:underline;font-size:0.95rem;margin:4px 0}
 .contact{margin-top:18px;background:rgba(255,255,255,0.07);padding:12px;border-radius:10px}
 .contact h3{margin:0 0 8px 0}
 .contact a{display:block;color:white;text-decoration:underline;font-size:0.95rem;margin:4px 0}
