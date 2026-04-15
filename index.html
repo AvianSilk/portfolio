@@ -3,312 +3,165 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Venkata Maruthi Sowmyanath Adapala | Portfolio</title>
+    <title>Venkata Adapala | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="container">
-      <aside class="sidebar">
-        <div class="profile">
-          <h1 class="name">Venkata Maruthi Sowmyanath Adapala</h1>
-          <p class="role">Open to Software and Web Development Internships</p>
-          <img
-            src="assets/images/Headshot.jpg"
-            width="210"
-            alt="My profile photo"
-          />
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+      <a class="nav-logo" href="index.html">Venkata<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="assets/Resume.pdf" class="nav-resume" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <canvas id="star-canvas"></canvas>
+      <div class="hero-bg"></div>
+
+      <div class="hero-content">
+        <img
+          src="assets/images/Headshot.jpg"
+          alt="Venkata Adapala"
+          class="hero-photo"
+        />
+
+        <p class="hero-eyebrow">Open to Internships &bull; Canada</p>
+
+        <h1 class="hero-name">Venkata Adapala</h1>
+
+        <p class="hero-tagline">
+          <span class="typed-text" id="typed"></span><span class="cursor"></span>
+        </p>
+
+        <p class="hero-desc">
+          Third-year Computer Science specialist at UTM &mdash; building
+          full-stack apps, shipping tests, and obsessing over clean architecture.
+        </p>
+
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="assets/Resume.pdf" target="_blank" rel="noopener" class="btn btn-teal">Download R&eacute;sum&eacute;</a>
+          <a href="experience.html" class="btn btn-ghost">Experience</a>
         </div>
 
-        <nav class="links">
-          <a href="#summary">Summary</a>
-          <a href="#education">Education</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#certifications">Certifications & Projects</a>
-          <a href="#awards">Awards & Accomplishments</a>
-        </nav>
-
-        <div class="resume-links">
-          <h3>Résumé</h3>
-          <a href="assets/Resume.pdf" target="_blank" rel="noopener">View PDF</a>
+        <div class="hero-socials">
+          <a href="https://github.com/AvianSilk" target="_blank" rel="noopener" class="social-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.21c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.88 1.54 2.31 1.1 2.87.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84a9.3 9.3 0 0 1 2.5.34c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.21C22 6.58 17.52 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/venkata-adapala/" target="_blank" rel="noopener" class="social-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:avmsowmyanath8@gmail.com" class="social-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="contact">
-          <h3>Contact</h3>
-          (+1) 365-888-6606
-          <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
-          <a href="https://github.com/AvianSilk" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          <a href="https://www.linkedin.com/in/venkata-adapala/">LinkedIn</a>
-        </div>
+    <!-- ── SUMMARY ── -->
+    <section class="section reveal">
+      <p class="section-eyebrow">About Me</p>
+      <h2 class="section-title">Candidate <em>Summary</em></h2>
+      <div class="section-rule"></div>
 
-        <footer class="sidebar-foot">© <span id="year"></span> Venkata</footer>
-      </aside>
+      <div class="summary-card glass-card">
+        <p>
+          Third-year <strong>Computer Science Specialist</strong> at the University of Toronto
+          Mississauga, proficient in <strong>Python</strong>, <strong>Java</strong>, and
+          <strong>JavaScript</strong>, and certified in <strong>AWS</strong> and
+          <strong>Oracle Java SE 8</strong>. I build production-ready full-stack applications
+          with a focus on clean architecture, automated testing, and CI/CD pipelines.
+          Recognized for persistence in technical challenges and strong collaboration in
+          team environments &mdash; most recently competing at the
+          <strong>FIRST Robotics World Championships</strong> in Houston, TX.
+        </p>
 
-      <main class="main">
-        <header class="topbar">
-          <button id="menuToggle" class="menu-btn" aria-label="Toggle menu">
-            ☰
-          </button>
-        </header>
-
-        <section id="summary" class="card">
-          <h2>CANDIDATE SUMMARY</h2>
-          <p>
-            Third year Computer Science Specialist proficient in Python, Java
-            and JavaScript and certified in AWS. Recognized for persistence in
-            coding challenges and strong collaboration within team environments.
-          </p>
-        </section>
-
-        <section id="education" class="card">
-          <h2>EDUCATION</h2>
-          <div class="edu-item">
-            <h3>Honours Bachelors of Science (H.Bsc.), Computer Science</h3>
-            <p class="muted">
-              University of Toronto Mississauga | September 2023 &ndash; Present
-            </p>
-            <p>
-              Expected graduation with <i>UTM Co-op Internship Program</i>:
-              <b>May 2028</b>
-            </p>
-            <p>
-              Relevant Courses: Software Engineering, Data Structures and
-              Analysis, Web Development, Databases
-            </p>
+        <div class="stats-grid" style="margin-top:2rem">
+          <div class="stat-card reveal reveal-delay-1">
+            <span class="stat-number">2&times;</span>
+            <span class="stat-label">Dean's List Scholar</span>
           </div>
-        </section>
+          <div class="stat-card reveal reveal-delay-2">
+            <span class="stat-number" style="font-size:1.5rem;line-height:1.3">Top 18%</span>
+            <span class="stat-label">FRC World Championships</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <span class="stat-number">17</span>
+            <span class="stat-label">Strong Skills</span>
+          </div>
+          <!-- <div class="stat-card reveal reveal-delay-3">
+            <span class="stat-number">27</span>
+            <span class="stat-label">REST Endpoints Built</span>
+          </div> -->
+        </div>
+      </div>
+    </section>
 
-        <section id="skills" class="card">
-          <h2>SKILLS</h2>
-          <div class="skills-grid">
-            <div>
-              <h4>Programming Languages / Databases</h4>
-              <ul>
-                <li>Java</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>C</li>
-                <li>RiSC</li>
-                <li>HTML</li>
-                <li>SQLite</li>
-                <li>PostgreSQL</li>
-              </ul>
+    <!-- ── AWARDS ── -->
+    <section class="section reveal">
+      <p class="section-eyebrow">Recognition</p>
+      <h2 class="section-title">Awards &amp; <em>Accomplishments</em></h2>
+      <div class="section-rule"></div>
+
+      <div class="awards-grid">
+        <div class="award-card reveal reveal-delay-1">
+          <div class="award-icon">&#127942;</div>
+          <div>
+            <div class="award-title">Dean's List Scholar</div>
+            <div class="award-meta">University of Toronto Mississauga &mdash; June 2024 &amp; 2025</div>
+            <div class="award-desc">
+              Awarded to students achieving a <strong>3.5+ cumulative GPA</strong>,
+              recognizing exceptional academic performance across two consecutive years.
             </div>
+          </div>
+        </div>
 
-            <div>
-              <h4>Frameworks / Tools</h4>
-              <ul>
-                <li>Claude</li>
-                <li>JavaFX</li>
-                <li>Node.js</li>
-                <li>Next.js</li>
-                <li>React</li>
-                <li>Flask</li>
-                <li>Docker</li>
-                <li>AWS</li>
-                <li>Git</li>
-                <li>GitHub Actions</li>
-                <li>MiPS</li>
-              </ul>
+        <div class="award-card reveal reveal-delay-2">
+          <div class="award-icon">&#127891;</div>
+          <div>
+            <div class="award-title">Ontario Scholar</div>
+            <div class="award-meta">Garth Webb Secondary School, ON &mdash; June 2022</div>
+            <div class="award-desc">
+              Provincial award by the <strong>Ontario Government</strong> recognizing
+              an <strong>80%+ overall average</strong> in Grade 12 courses.
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section id="experience" class="card">
-          <h2>EXPERIENCE</h2>
-          <div class="exp-item">
-            <h3>
-              FIRST Robotics Competition (FRC), Programming Sub-team –
-              <a href="https://www.team5409.ca/" target="_blank" rel="noopener"
-                >Team 5409</a
-              >
-            </h3>
-            <p class="muted">
-              Garth Webb Secondary School, Oakville, ON — September 2022 &ndash;
-              April 2023
-            </p>
-            <ul>
-              <li>
-                Wrote sophisticated <b>Java</b> code that controls various
-                aspects of a robot (Limelight cameras, solenoids, Roborios,
-                etc.)
-              </li>
-              <li>
-                Worked with seven other developers and was guided by mentors
-                with decades of experience
-              </li>
-              <li>
-                Qualified for and competed against the top 18% of teams
-                worldwide at the <b>World Championships</b> of FRC in
-                <b>Houston, TX</b>.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="certifications" class="card">
-          <h2>PROJECTS &amp; CERTIFICATIONS</h2>
-
-          <div class="exp-item">
-            <h3>
-              <a
-                href="https://github.com/AvianSilk/Radio-Calico"
-                target="_blank"
-                rel="noopener"
-                >Radio Calico</a
-              >
-            </h3>
-            <p class="muted">Personal Project — April 2026 &ndash; Present</p>
-            <ul>
-              <li>
-                Designed and built a <b>full-stack web app</b> that streams a
-                live HLS audio broadcast with real-time now-playing metadata,
-                album art, song history, and a per-user like/dislike rating
-                system.
-              </li>
-              <li>
-                Multi-stage Docker build separating dev, production API, and
-                nginx images; vanilla JS frontend with HLS.js lazy-loaded on
-                first interaction for near-instant initial page load.
-              </li>
-              <li>
-                Self-hosted WOFF2 fonts, .webp image fallbacks, and timestamp
-                cache-busting on album art fetches for page-speed optimization.
-              </li>
-              <li>
-                Jest test suite covering backend API routes (via pg-mem
-                in-memory Postgres) and frontend DOM behavior (jsdom + fake
-                timers), with GitHub Actions CI running tests and a 4-stage
-                security scan (npm audit, Trivy, Semgrep, Gitleaks) on every
-                push.
-              </li>
-              <li>
-                <b>Claude</b> was used as the primary development partner across
-                every stage of the project, including initial architecture
-                prototyping, Express routing, PostgreSQL schema design, nginx
-                configuration, frontend performance optimization, the full Jest
-                test suite, multi-stage Docker and Compose setup, GitHub Actions
-                CI/CD, and project documentation.
-              </li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <h3>
-              <a
-                href="https://github.com/AvianSilk/SmartSyllabus"
-                target="_blank"
-                rel="noopener"
-                >SmartSyllabus</a
-              >
-            </h3>
-            <p class="muted">
-              University of Toronto, Mississauga — January 2026 &ndash; Present
-            </p>
-            <ul>
-              <li>
-                Worked with five other developers to build a
-                <b>full-stack web app</b> for university students using
-                <b>React 18</b>, <b>Flask</b>, and <b>SQLite</b>. Features
-                include course grade tracking, an interactive calendar with
-                <code>.ics</code> export, a workload notification system, and a
-                Pomodoro focus timer.
-              </li>
-              <li>
-                Used <b>Gemini 2.5 Flash</b> to parse uploaded PDF syllabi and
-                extract assessments, weights, deadlines, and lecture schedules,
-                which are stored in SQLite and reflected in the calendar
-                automatically.
-              </li>
-              <li>
-                Built a REST API with 27 endpoints for authentication, course
-                management, calendar, and dashboard features, secured with
-                <b>JWT</b> access/refresh tokens, <i>SHA-256</i> password
-                hashing, and <i>SMTP</i>-based password reset.
-              </li>
-              <li>
-                Used <i>React Context</i> for auth state and protected
-                client-side routing; built reusable components with a CSS custom
-                property design system, <b>FullCalendar</b>, and
-                <b>Chart.js</b> for grade progression graphs.
-              </li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <h3>
-              <a
-                href="https://www.credly.com/badges/1d6ad7a2-d130-4144-a106-b67f6eaf83ff/public_url"
-                target="_blank"
-                rel="noopener"
-                >AWS Certified Cloud Practitioner</a
-              >
-            </h3>
-            <p class="muted">January 2026</p>
-            <ul>
-              <li>
-                Certified by the multinational technology company <b>Amazon</b>,
-                this certificate recognizes my knowledge of the core services,
-                security, pricing, and basic architecture of Amazon Web Services
-                (AWS).
-              </li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <h3>
-              <a
-                href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DC06C202E5893F1482C2C084CE3075642F5B4B09B7A5D0A1B946CA68EA220D0"
-                target="_blank"
-                rel="noopener"
-                >Oracle Certified Associate, Java SE 8 Programmer</a
-              >
-            </h3>
-            <p class="muted">July 2025</p>
-            <ul>
-              <li>
-                Certified by the multinational corporation <b>Oracle</b>, this
-                certificate recognizes my knowledge of object-oriented concepts,
-                the Java programming language and general knowledge of Java
-                platforms and technologies.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="awards" class="card">
-          <h2>AWARDS &amp; ACCOMPLISHMENTS</h2>
-          <div class="exp-item">
-            <h3>Dean’s List Scholar</h3>
-            <p class="muted">
-              University of Toronto Mississauga, Mississauga, ON — June 2024
-              &amp; 2025
-            </p>
-            <ul>
-              <li>
-                Award recognizing exceptional academic achievement in courses
-                (given to students with a 3.5+ cGPA).
-              </li>
-            </ul>
-          </div>
-          <div class="exp-item">
-            <h3>Ontario Scholar</h3>
-            <p class="muted">Garth Webb Secondary School, ON - June 2022</p>
-            <ul>
-              <li>
-                Award presented by the
-                <b>Ontario Provincial Government</b> recognizing commendable
-                academic achievement (given to students with a 80%+ average).
-              </li>
-            </ul>
-          </div>
-        </section>
-      </main>
-    </div>
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <div class="footer-name">Venkata Maruthi Sowmyanath Adapala</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkata-adapala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Venkata Adapala</div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

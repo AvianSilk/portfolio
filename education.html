@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education | Venkata Adapala</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── UTM hero banner ── */
+      .edu-banner {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        backdrop-filter: blur(12px);
+        margin-bottom: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .edu-banner::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #002a5c, var(--accent), var(--teal));
+      }
+      .utm-logo {
+        width: 110px;
+        height: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+        filter: brightness(1.05);
+      }
+      .edu-banner-text { flex: 1; }
+      .edu-banner-degree {
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.25;
+        margin-bottom: 0.35rem;
+      }
+      .edu-banner-school {
+        font-size: 0.95rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+      .edu-banner-dates {
+        font-size: 0.83rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      .edu-banner-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .edu-pill {
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+      .edu-pill-blue {
+        background: rgba(79, 158, 255, 0.12);
+        border: 1px solid rgba(79, 158, 255, 0.25);
+        color: var(--accent);
+      }
+      .edu-pill-teal {
+        background: rgba(0, 212, 170, 0.1);
+        border: 1px solid rgba(0, 212, 170, 0.22);
+        color: var(--teal);
+      }
+      .edu-pill-amber {
+        background: rgba(255, 169, 77, 0.1);
+        border: 1px solid rgba(255, 169, 77, 0.22);
+        color: var(--amber);
+      }
+
+      /* ── Ranking stats ── */
+      .ranking-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+      }
+      .ranking-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .ranking-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--teal));
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .ranking-card:hover {
+        border-color: rgba(79, 158, 255, 0.35);
+        transform: translateY(-4px);
+        box-shadow: var(--glow-blue), var(--shadow);
+      }
+      .ranking-card:hover::after { opacity: 1; }
+
+      .ranking-number {
+        font-family: var(--font-head);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        background: linear-gradient(135deg, var(--accent), var(--teal));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .ranking-label {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        line-height: 1.4;
+      }
+      .ranking-source {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 0.35rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* ── Programme detail card ── */
+      .programme-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem 2rem 2rem 2.5rem;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        margin-bottom: 1.5rem;
+        transition: border-color 0.3s, transform 0.3s;
+      }
+      .programme-card:hover {
+        border-color: rgba(79, 158, 255, 0.35);
+        transform: translateY(-3px);
+      }
+      .programme-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 4px; height: 100%;
+        background: linear-gradient(180deg, var(--accent), var(--teal));
+        border-radius: 16px 0 0 16px;
+      }
+      .programme-heading {
+        font-family: var(--font-head);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .programme-detail-row {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        color: var(--text-dim);
+        line-height: 1.55;
+        margin-bottom: 0.55rem;
+      }
+      .programme-detail-row::before {
+        content: '▸';
+        color: var(--teal);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .programme-detail-row strong { color: var(--text); }
+
+      /* ── Courses ── */
+      .course-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 0.5rem;
+      }
+      .course-tag {
+        font-size: 0.82rem;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 8px;
+        background: rgba(79, 158, 255, 0.07);
+        border: 1px solid rgba(79, 158, 255, 0.14);
+        color: var(--text-dim);
+        cursor: default;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+      }
+      .course-tag:hover {
+        background: rgba(79, 158, 255, 0.14);
+        color: var(--text);
+        border-color: rgba(79, 158, 255, 0.35);
+      }
+
+      /* ── Dean's List highlight ── */
+      .deans-list-card {
+        background: linear-gradient(135deg, rgba(79, 158, 255, 0.07) 0%, rgba(0, 212, 170, 0.05) 100%);
+        border: 1px solid rgba(79, 158, 255, 0.25);
+        border-radius: 16px;
+        padding: 1.75rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        transition: border-color 0.3s, transform 0.3s;
+      }
+      .deans-list-card:hover {
+        border-color: rgba(79, 158, 255, 0.45);
+        transform: translateY(-3px);
+      }
+      .deans-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+      }
+      .deans-title {
+        font-family: var(--font-head);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.2rem;
+      }
+      .deans-meta { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-bottom: 0.35rem; }
+      .deans-desc { font-size: 0.875rem; color: var(--text-dim); line-height: 1.55; }
+
+      @media (max-width: 700px) {
+        .ranking-grid { grid-template-columns: 1fr 1fr; }
+        .edu-banner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+        .utm-logo { width: 90px; }
+      }
+      @media (max-width: 480px) {
+        .ranking-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+      <a class="nav-logo" href="index.html">Venkata<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html" class="active">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="assets/Resume.pdf" class="nav-resume" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="page-wrapper">
+
+      <!-- ── PAGE HERO ── -->
+      <div class="page-hero">
+        <p class="page-hero-eyebrow">Academic Background</p>
+        <h1 class="page-hero-title"><em>Education</em></h1>
+        <p class="page-hero-sub">
+          Studying Computer Science at Canada&rsquo;s #1 university &mdash;
+          ranked in the global top&nbsp;20 and top&nbsp;17 across all broad subject fields.
+        </p>
+      </div>
+
+      <section class="section">
+
+        <!-- ── Degree banner ── -->
+        <div class="edu-banner reveal">
+          <img
+            src="assets/images/blue_UTM_logo.png"
+            alt="University of Toronto Mississauga logo"
+            class="utm-logo"
+          />
+          <div class="edu-banner-text">
+            <div class="edu-banner-degree">
+              Honours Bachelor of Science (H.B.Sc.),<br>Computer Science Specialist
+            </div>
+            <div class="edu-banner-school">University of Toronto Mississauga &mdash; Mississauga, ON</div>
+            <div class="edu-banner-dates">September 2023 &ndash; Present &nbsp;&bull;&nbsp; Expected May 2028</div>
+            <div class="edu-banner-pills">
+              <span class="edu-pill edu-pill-blue">Co-op Internship Program</span>
+              <span class="edu-pill edu-pill-teal">Dean&rsquo;s List 2024 &amp; 2025</span>
+              <!-- <span class="edu-pill edu-pill-amber">3.5+ cGPA</span> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ── University rankings ── -->
+        <p class="section-eyebrow reveal">University of Toronto &mdash; By the Numbers</p>
+        <h2 class="section-title reveal" style="margin-bottom:1.5rem">A World-Class <em>Institution</em></h2>
+
+        <div class="ranking-grid">
+          <div class="ranking-card reveal reveal-delay-1">
+            <span class="ranking-number">#1</span>
+            <div class="ranking-label">University in Canada</div>
+            <div class="ranking-source">QS World University Rankings</div>
+          </div>
+          <div class="ranking-card reveal reveal-delay-1">
+            <span class="ranking-number">Top 17</span>
+            <div class="ranking-label">Globally across all broad subject fields</div>
+            <div class="ranking-source">QS Rankings</div>
+          </div>
+          <div class="ranking-card reveal reveal-delay-2">
+            <span class="ranking-number">Top 20</span>
+            <div class="ranking-label">Universities worldwide</div>
+            <div class="ranking-source">US News &amp; World Report</div>
+          </div>
+          <div class="ranking-card reveal reveal-delay-2">
+            <span class="ranking-number">Top 50</span>
+            <div class="ranking-label">In more subjects than any other university</div>
+            <div class="ranking-source">QS Rankings</div>
+          </div>
+          <div class="ranking-card reveal reveal-delay-3">
+            <span class="ranking-number">$36M</span>
+            <div class="ranking-label">Annually in student scholarships &amp; financial support</div>
+            <div class="ranking-source">utm.utoronto.ca</div>
+          </div>
+          <div class="ranking-card reveal reveal-delay-3">
+            <span class="ranking-number">180+</span>
+            <div class="ranking-label">Programs offered across all disciplines</div>
+            <div class="ranking-source">utm.utoronto.ca</div>
+          </div>
+        </div>
+
+        <!-- ── Programme details ── -->
+        <p class="section-eyebrow reveal" style="margin-top:1rem">Programme Details</p>
+        <h2 class="section-title reveal" style="margin-bottom:1.5rem">Degree &amp; <em>Coursework</em></h2>
+
+        <div class="programme-card reveal">
+          <p class="programme-heading">Degree &amp; Enrolment</p>
+          <div class="programme-detail-row">
+            Pursuing an <strong>Honours Bachelor of Science, Computer Science Specialist</strong>
+            &mdash; a rigorous, single-subject specialist stream requiring advanced coursework
+            across theory, systems, and software engineering.
+          </div>
+          <div class="programme-detail-row">
+            Enrolled in the <strong>UTM Co-op Internship Program</strong>, which integrates
+            paid work terms into the degree. Expected graduation: <strong>May 2028</strong>.
+          </div>
+          <div class="programme-detail-row">
+            Earned <strong>Dean&rsquo;s List</strong> distinction in <strong>June 2024</strong>
+            and <strong>June 2025</strong> for maintaining a 3.5+ cumulative GPA &mdash;
+            two consecutive years of academic excellence.
+          </div>
+        </div>
+
+        <div class="programme-card reveal">
+          <p class="programme-heading">Relevant Courses</p>
+          <div class="course-tags">
+            <span class="course-tag">Software Engineering</span>
+            <span class="course-tag">Data Structures &amp; Analysis</span>
+            <span class="course-tag">Web Development</span>
+            <span class="course-tag">Databases</span>
+            <span class="course-tag">Computer Organization</span>
+            <span class="course-tag">Algorithm Design &amp; Analysis</span>
+            <span class="course-tag">Operating Systems</span>
+            <span class="course-tag">Theory of Computation</span>
+          </div>
+        </div>
+
+        <!-- ── Dean's List highlight ── -->
+        <div class="deans-list-card reveal">
+          <div class="deans-icon">&#127942;</div>
+          <div>
+            <div class="deans-title">Dean&rsquo;s List Scholar &mdash; Two Consecutive Years</div>
+            <div class="deans-meta">University of Toronto Mississauga &mdash; June 2024 &amp; June 2025</div>
+            <div class="deans-desc">
+              Awarded to students who maintain a <strong>3.5+ cumulative GPA</strong>.
+              Receiving this distinction in back-to-back years reflects sustained high
+              academic performance across a full range of Computer Science coursework.
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div><!-- /page-wrapper -->
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <div class="footer-name">Venkata Maruthi Sowmyanath Adapala</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkata-adapala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; PDF</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Venkata Adapala</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

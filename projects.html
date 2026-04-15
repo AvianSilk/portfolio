@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Venkata Adapala</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+      <a class="nav-logo" href="index.html">Venkata<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="assets/Resume.pdf" class="nav-resume" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="page-wrapper">
+
+      <!-- ── PAGE HERO ── -->
+      <div class="page-hero">
+        <p class="page-hero-eyebrow">What I've Built</p>
+        <h1 class="page-hero-title">Projects</h1>
+        <p class="page-hero-sub">
+          Full-stack applications built with modern tooling, automated testing, and production-grade
+          infrastructure &mdash; plus industry certifications in AWS and Java.
+        </p>
+      </div>
+
+      <!-- ════════════════════════════════════════════
+           PROJECTS
+           ════════════════════════════════════════════ -->
+      <section class="section">
+        <p class="section-eyebrow">Personal &amp; Team Projects</p>
+        <h2 class="section-title"><em>Projects</em></h2>
+        <div class="section-rule"></div>
+
+        <!-- ── Radio Calico ── -->
+        <article class="project-card reveal">
+          <div class="project-header">
+            <p class="project-type">Personal Project</p>
+            <div class="project-title-row">
+              <img
+                src="https://raw.githubusercontent.com/AvianSilk/radio-calico/main/RadioCalicoLogoTM.png"
+                alt="Radio Calico logo"
+                class="project-logo"
+                onerror="this.style.display='none'"
+              />
+              <h3 class="project-title">
+                <a href="https://github.com/AvianSilk/radio-calico" target="_blank" rel="noopener">
+                  Radio Calico
+                </a>
+              </h3>
+            </div>
+            <p class="project-date">April 2026 &ndash; Present</p>
+          </div>
+
+          <div class="project-body">
+            <p class="project-desc">
+              A production-ready, full-stack HLS radio player that streams a live lossless
+              (16-bit / 44.1 kHz) audio broadcast with real-time now-playing metadata, animated
+              album art, an elapsed-time visualizer, and a per-user like/dislike rating system
+              persisted in PostgreSQL. Built with a multi-stage Docker setup, nginx reverse
+              proxy, and a comprehensive security-focused CI/CD pipeline.
+            </p>
+
+            <div class="tech-stack">
+              <span class="tag tag-blue">Node.js v22</span>
+              <span class="tag tag-blue">Express 5</span>
+              <span class="tag tag-teal">PostgreSQL</span>
+              <span class="tag tag-teal">HLS.js</span>
+              <span class="tag tag-gray">Vanilla JS</span>
+              <span class="tag tag-gray">nginx 1.29</span>
+              <span class="tag tag-purple">Docker</span>
+              <span class="tag tag-purple">Docker Compose</span>
+              <span class="tag tag-amber">Jest</span>
+              <span class="tag tag-amber">GitHub Actions CI</span>
+            </div>
+
+            <div class="metrics-row">
+              <span class="metric-chip">&#10003; 99 tests &mdash; 4 suites, ~0.6 s</span>
+              <span class="metric-chip">&#10003; 4-stage security scan on every push</span>
+              <span class="metric-chip">&#10003; Multi-stage Docker build</span>
+              <span class="metric-chip">&#10003; Sub-second initial page load</span>
+            </div>
+
+            <p class="features-heading">Key Features</p>
+            <ul class="feature-list features-2col">
+              <li>
+                <strong>Live HLS streaming</strong> &mdash; lossless 16-bit / 44.1 kHz audio
+                via <code>HLS.js</code>, lazy-loaded on first interaction for near-instant
+                initial page load.
+              </li>
+              <li>
+                <strong>Real-time metadata</strong> &mdash; track title, artist, album, year,
+                and category tags update in sync with each track change from a CloudFront endpoint.
+              </li>
+              <li>
+                <strong>Like / dislike ratings</strong> &mdash; per-user votes persisted in
+                PostgreSQL by IP address; toggle support with live count display.
+              </li>
+              <li>
+                <strong>Animated visualizer</strong> &mdash; CSS-driven audio visualizer and
+                elapsed time display synchronized with playback state.
+              </li>
+              <li>
+                <strong>Multi-stage Docker build</strong> &mdash; separate <code>deps-prod</code>,
+                <code>deps-all</code>, <code>dev</code>, <code>prod</code>, and
+                <code>nginx</code> images; Express port internal-only in production.
+              </li>
+              <li>
+                <strong>Full Jest test suite</strong> &mdash; 99 tests across 4 files covering
+                API routes (pg-mem in-memory Postgres), frontend DOM behavior (jsdom + fake timers),
+                metadata fetching, and audio player events.
+              </li>
+              <li>
+                <strong>4-stage security CI</strong> &mdash; <code>npm audit</code> + Trivy
+                (Docker CVE scan) + Semgrep (SAST) + Gitleaks (secrets detection), all running
+                in parallel with the Jest job on every push and PR.
+              </li>
+              <li>
+                <strong>Page-speed optimizations</strong> &mdash; self-hosted WOFF2 fonts,
+                <code>.webp</code> image fallbacks, timestamp cache-busting on album art fetches.
+              </li>
+            </ul>
+
+            <p class="features-heading" style="margin-top:0.5rem">Architecture</p>
+            <ul class="feature-list">
+              <li>
+                <strong>Traffic flow (prod):</strong> browser &rarr; nginx:80 &rarr;
+                static files (<code>public/</code>) or <code>/api/*</code> proxied to Express on
+                internal port 3000. Express is never exposed to the host in production.
+              </li>
+              <li>
+                <strong>Makefile workflow:</strong> <code>make prod</code>, <code>make dev</code>
+                (nodemon + bind-mounts), <code>make test</code>, <code>make scan</code> &mdash;
+                Docker Desktop starts automatically if not running.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-footer">
+            <a href="https://github.com/AvianSilk/radio-calico" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.21c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.88 1.54 2.31 1.1 2.87.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84a9.3 9.3 0 0 1 2.5.34c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.21C22 6.58 17.52 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- ── SmartSyllabus ── -->
+        <article class="project-card reveal">
+          <div class="project-header purple-top">
+            <p class="project-type">University Team Project &mdash; 6 Developers</p>
+            <div class="project-title-row">
+              <img
+                src="assets/images/smartsyllabus_logo.png"
+                alt="SmartSyllabus logo"
+                class="project-logo"
+                onerror="this.style.display='none'"
+              />
+              <h3 class="project-title">
+                <a href="https://github.com/RohanAslam/CSC301---SmartSyllabus" target="_blank" rel="noopener">
+                  SmartSyllabus
+                </a>
+              </h3>
+            </div>
+            <p class="project-date">University of Toronto Mississauga &mdash; January 2026 &ndash; Present</p>
+          </div>
+
+          <div class="project-body">
+            <p class="project-desc">
+              An all-in-one academic hub for Canadian and American university students.
+              Students upload course syllabi, which are automatically parsed by
+              <strong>Gemini 2.5 Flash AI</strong> to extract assessments, weights, deadlines,
+              and lecture schedules &mdash; all stored in SQLite and reflected in an interactive
+              calendar. Includes grade tracking, GPA calculation, a Pomodoro focus timer, and
+              <code>.ics</code> calendar export.
+            </p>
+
+            <div class="tech-stack">
+              <span class="tag tag-blue">React 18</span>
+              <span class="tag tag-blue">Vite</span>
+              <span class="tag tag-teal">Flask</span>
+              <span class="tag tag-teal">SQLite</span>
+              <span class="tag tag-purple">Gemini 2.5 Flash</span>
+              <span class="tag tag-purple">JWT Auth</span>
+              <span class="tag tag-amber">FullCalendar</span>
+              <span class="tag tag-amber">Chart.js</span>
+              <span class="tag tag-gray">PyMuPDF</span>
+              <span class="tag tag-gray">React Router 7</span>
+              <span class="tag tag-gray">CSS Variables</span>
+            </div>
+
+            <div class="metrics-row">
+              <span class="metric-chip">&#10003; 27 REST endpoints</span>
+              <span class="metric-chip">&#10003; AI PDF parsing (2-pass extraction)</span>
+              <span class="metric-chip">&#10003; RFC 5545 ICS export</span>
+              <span class="metric-chip">&#10003; JWT access + refresh tokens</span>
+            </div>
+
+            <p class="features-heading">Key Features</p>
+            <ul class="feature-list features-2col">
+              <li>
+                <strong>AI syllabus parsing</strong> &mdash; upload a PDF; Gemini 2.5 Flash
+                extracts assessments (name, weight, deadline) and lecture schedules in two
+                structured JSON passes, auto-populating the calendar.
+              </li>
+              <li>
+                <strong>Grade tracking &amp; GPA</strong> &mdash; enter scores per assessment;
+                weighted averages and cumulative GPA are calculated automatically. Grade
+                progression graph via Chart.js.
+              </li>
+              <li>
+                <strong>Interactive calendar</strong> &mdash; FullCalendar month view with
+                assessment deadlines and lectures auto-populated. Manual event creation with
+                color-coding per course.
+              </li>
+              <li>
+                <strong>ICS export</strong> &mdash; RFC 5545-compliant <code>.ics</code> file
+                generated client-side via the Blob API; compatible with Google Calendar, Apple
+                Calendar, and Outlook.
+              </li>
+              <li>
+                <strong>JWT authentication</strong> &mdash; access tokens (60-min) + refresh
+                tokens (7-day). SHA-256 password hashing. SMTP-based password reset via time-limited
+                email links.
+              </li>
+              <li>
+                <strong>Workload notifications</strong> &mdash; detects weeks with 7+ assessments
+                due and surfaces alerts on the Home dashboard.
+              </li>
+              <li>
+                <strong>Pomodoro timer</strong> &mdash; fully client-side, customizable focus /
+                break durations, pause/resume, session counter. State persisted in
+                <code>localStorage</code> across page refreshes.
+              </li>
+              <li>
+                <strong>Design system</strong> &mdash; all colors, spacing, and typography
+                defined as CSS custom properties in <code>variables.css</code>; no hardcoded
+                values in component stylesheets.
+              </li>
+            </ul>
+
+            <p class="features-heading" style="margin-top:0.5rem">Co-Developers</p>
+            <div class="tech-stack">
+              <a href="https://github.com/RohanAslam" target="_blank" rel="noopener" class="tag tag-gray">Rohan Aslam</a>
+              <a href="https://github.com/nanicrio" target="_blank" rel="noopener" class="tag tag-gray">Nathalie Rios</a>
+              <a href="https://github.com/shreya1055" target="_blank" rel="noopener" class="tag tag-gray">Shreya Cherukuri</a>
+              <a href="https://github.com/heba-rah" target="_blank" rel="noopener" class="tag tag-gray">Heba Rahmathulla</a>
+              <a href="https://github.com/Eleanormaskie" target="_blank" rel="noopener" class="tag tag-gray">Eleanor Mascarenhas</a>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <a href="https://github.com/RohanAslam/CSC301---SmartSyllabus" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.21c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.52 1.05 1.52 1.05.88 1.54 2.31 1.1 2.87.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0 1 12 6.84a9.3 9.3 0 0 1 2.5.34c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.21C22 6.58 17.52 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ── Certifications teaser ── -->
+      <section class="section reveal" style="padding-top:0">
+        <div class="glass-card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.5rem 2rem">
+          <div>
+            <p class="section-eyebrow" style="margin-bottom:0.2rem">Also see</p>
+            <p style="font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--text)">
+              AWS &amp; Oracle Java SE 8 Certifications
+            </p>
+            <p style="font-size:0.875rem;color:var(--muted);margin-top:2px">
+              Full details, badge images, and exam domain breakdowns on the Certifications page.
+            </p>
+          </div>
+          <a href="certifications.html" class="btn btn-primary" style="white-space:nowrap">
+            View Certifications &rarr;
+          </a>
+        </div>
+      </section>
+
+    </div><!-- /page-wrapper -->
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <div class="footer-name">Venkata Maruthi Sowmyanath Adapala</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkata-adapala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; PDF</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Venkata Adapala</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
