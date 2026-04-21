@@ -602,14 +602,13 @@ a.tag:hover { opacity: 0.8; }
 }
 .feature-list { list-style: none; display: grid; gap: 0.65rem; margin-bottom: 1.5rem; }
 .feature-list li {
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
+  position: relative;
+  padding-left: 1.25rem;
   font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.55;
 }
-.feature-list li::before { content:'▸'; color:var(--teal); flex-shrink:0; margin-top:2px; }
+.feature-list li::before { content:'▸'; color:var(--teal); position:absolute; left:0; top:0.175em; }
 .feature-list li strong { color: var(--text); }
 
 /* Project metrics bar */
@@ -750,14 +749,13 @@ a.tag:hover { opacity: 0.8; }
 }
 .timeline-list { list-style: none; display: grid; gap: 0.6rem; }
 .timeline-list li {
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
+  position: relative;
+  padding-left: 1.25rem;
   font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.55;
 }
-.timeline-list li::before { content:'▸'; color:var(--accent); flex-shrink:0; margin-top:2px; }
+.timeline-list li::before { content:'▸'; color:var(--accent); position:absolute; left:0; top:0.175em; }
 .timeline-list li strong { color: var(--text); }
 .timeline-badge {
   display: inline-flex;
