@@ -33,7 +33,7 @@
         <h1 class="page-hero-title">Projects</h1>
         <p class="page-hero-sub">
           Full-stack applications built with modern tooling, automated testing, and production-grade
-          infrastructure &mdash; plus industry certifications in AWS and Java.
+          infrastructure, plus industry certifications in AWS and Java.
         </p>
       </div>
 
@@ -57,9 +57,7 @@
                 onerror="this.style.display='none'"
               />
               <h3 class="project-title">
-                <a href="https://github.com/AvianSilk/radio-calico" target="_blank" rel="noopener">
                   Radio Calico
-                </a>
               </h3>
             </div>
             <p class="project-date">April 2026 &ndash; Present</p>
@@ -88,7 +86,7 @@
             </div>
 
             <div class="metrics-row">
-              <span class="metric-chip">&#10003; 99 tests &mdash; 4 suites, ~0.6 s</span>
+              <span class="metric-chip">&#10003; 99 tests (4 suites, ~0.6 s)</span>
               <span class="metric-chip">&#10003; 4-stage security scan on every push</span>
               <span class="metric-chip">&#10003; Multi-stage Docker build</span>
               <span class="metric-chip">&#10003; Sub-second initial page load</span>
@@ -97,39 +95,39 @@
             <p class="features-heading">Key Features</p>
             <ul class="feature-list features-2col">
               <li>
-                <strong>Live HLS streaming</strong> &mdash; lossless 16-bit / 44.1 kHz audio
+                <strong>Live HLS streaming</strong>: lossless 16-bit / 44.1 kHz audio
                 via <code>HLS.js</code>, lazy-loaded on first interaction for near-instant
                 initial page load.
               </li>
               <li>
-                <strong>Real-time metadata</strong> &mdash; track title, artist, album, year,
+                <strong>Real-time metadata</strong>: track title, artist, album, year,
                 and category tags update in sync with each track change from a CloudFront endpoint.
               </li>
               <li>
-                <strong>Like / dislike ratings</strong> &mdash; per-user votes persisted in
+                <strong>Like / dislike ratings</strong>: per-user votes persisted in
                 PostgreSQL by IP address; toggle support with live count display.
               </li>
               <li>
-                <strong>Animated visualizer</strong> &mdash; CSS-driven audio visualizer and
+                <strong>Animated visualizer</strong>: CSS-driven audio visualizer and
                 elapsed time display synchronized with playback state.
               </li>
               <li>
-                <strong>Multi-stage Docker build</strong> &mdash; separate <code>deps-prod</code>,
+                <strong>Multi-stage Docker build</strong>: separate <code>deps-prod</code>,
                 <code>deps-all</code>, <code>dev</code>, <code>prod</code>, and
                 <code>nginx</code> images; Express port internal-only in production.
               </li>
               <li>
-                <strong>Full Jest test suite</strong> &mdash; 99 tests across 4 files covering
+                <strong>Full Jest test suite</strong>: 99 tests across 4 files covering
                 API routes (pg-mem in-memory Postgres), frontend DOM behavior (jsdom + fake timers),
                 metadata fetching, and audio player events.
               </li>
               <li>
-                <strong>4-stage security CI</strong> &mdash; <code>npm audit</code> + Trivy
+                <strong>4-stage security CI</strong>: <code>npm audit</code> + Trivy
                 (Docker CVE scan) + Semgrep (SAST) + Gitleaks (secrets detection), all running
                 in parallel with the Jest job on every push and PR.
               </li>
               <li>
-                <strong>Page-speed optimizations</strong> &mdash; self-hosted WOFF2 fonts,
+                <strong>Page-speed optimizations</strong>: self-hosted WOFF2 fonts,
                 <code>.webp</code> image fallbacks, timestamp cache-busting on album art fetches.
               </li>
             </ul>
@@ -143,7 +141,7 @@
               </li>
               <li>
                 <strong>Makefile workflow:</strong> <code>make prod</code>, <code>make dev</code>
-                (nodemon + bind-mounts), <code>make test</code>, <code>make scan</code> &mdash;
+                (nodemon + bind-mounts), <code>make test</code>, <code>make scan</code>;
                 Docker Desktop starts automatically if not running.
               </li>
             </ul>
@@ -160,7 +158,7 @@
         <!-- ── SmartSyllabus ── -->
         <article class="project-card reveal">
           <div class="project-header purple-top">
-            <p class="project-type">University Team Project &mdash; 6 Developers</p>
+            <p class="project-type">University Team Project: 6 Developers</p>
             <div class="project-title-row">
               <img
                 src="assets/images/smartsyllabus_logo.png"
@@ -169,12 +167,10 @@
                 onerror="this.style.display='none'"
               />
               <h3 class="project-title">
-                <a href="https://github.com/RohanAslam/CSC301---SmartSyllabus" target="_blank" rel="noopener">
                   SmartSyllabus
-                </a>
               </h3>
             </div>
-            <p class="project-date">University of Toronto Mississauga &mdash; January 2026 &ndash; Present</p>
+            <p class="project-date">University of Toronto Mississauga:January 2026 &ndash; Present</p>
           </div>
 
           <div class="project-body">
@@ -182,7 +178,7 @@
               An all-in-one academic hub for Canadian and American university students.
               Students upload course syllabi, which are automatically parsed by
               <strong>Gemini 2.5 Flash AI</strong> to extract assessments, weights, deadlines,
-              and lecture schedules &mdash; all stored in SQLite and reflected in an interactive
+              and lecture schedules:all stored in SQLite and reflected in an interactive
               calendar. Includes grade tracking, GPA calculation, a Pomodoro focus timer, and
               <code>.ics</code> calendar export.
             </p>
@@ -211,41 +207,41 @@
             <p class="features-heading">Key Features</p>
             <ul class="feature-list features-2col">
               <li>
-                <strong>AI syllabus parsing</strong> &mdash; upload a PDF; Gemini 2.5 Flash
+                <strong>AI syllabus parsing</strong>: upload a PDF; Gemini 2.5 Flash
                 extracts assessments (name, weight, deadline) and lecture schedules in two
                 structured JSON passes, auto-populating the calendar.
               </li>
               <li>
-                <strong>Grade tracking &amp; GPA</strong> &mdash; enter scores per assessment;
+                <strong>Grade tracking &amp; GPA</strong>: enter scores per assessment;
                 weighted averages and cumulative GPA are calculated automatically. Grade
                 progression graph via Chart.js.
               </li>
               <li>
-                <strong>Interactive calendar</strong> &mdash; FullCalendar month view with
+                <strong>Interactive calendar</strong>: FullCalendar month view with
                 assessment deadlines and lectures auto-populated. Manual event creation with
                 color-coding per course.
               </li>
               <li>
-                <strong>ICS export</strong> &mdash; RFC 5545-compliant <code>.ics</code> file
+                <strong>ICS export</strong>: RFC 5545-compliant <code>.ics</code> file
                 generated client-side via the Blob API; compatible with Google Calendar, Apple
                 Calendar, and Outlook.
               </li>
               <li>
-                <strong>JWT authentication</strong> &mdash; access tokens (60-min) + refresh
+                <strong>JWT authentication</strong>: access tokens (60-min) + refresh
                 tokens (7-day). SHA-256 password hashing. SMTP-based password reset via time-limited
                 email links.
               </li>
               <li>
-                <strong>Workload notifications</strong> &mdash; detects weeks with 7+ assessments
+                <strong>Workload notifications</strong>: detects weeks with 7+ assessments
                 due and surfaces alerts on the Home dashboard.
               </li>
               <li>
-                <strong>Pomodoro timer</strong> &mdash; fully client-side, customizable focus /
+                <strong>Pomodoro timer</strong>: fully client-side, customizable focus /
                 break durations, pause/resume, session counter. State persisted in
                 <code>localStorage</code> across page refreshes.
               </li>
               <li>
-                <strong>Design system</strong> &mdash; all colors, spacing, and typography
+                <strong>Design system</strong>: all colors, spacing, and typography
                 defined as CSS custom properties in <code>variables.css</code>; no hardcoded
                 values in component stylesheets.
               </li>
@@ -254,10 +250,10 @@
             <p class="features-heading" style="margin-top:0.5rem">Co-Developers</p>
             <div class="tech-stack">
               <a href="https://github.com/RohanAslam" target="_blank" rel="noopener" class="tag tag-gray">Rohan Aslam</a>
-              <a href="https://github.com/nanicrio" target="_blank" rel="noopener" class="tag tag-gray">Nathalie Rios</a>
               <a href="https://github.com/shreya1055" target="_blank" rel="noopener" class="tag tag-gray">Shreya Cherukuri</a>
-              <a href="https://github.com/heba-rah" target="_blank" rel="noopener" class="tag tag-gray">Heba Rahmathulla</a>
               <a href="https://github.com/Eleanormaskie" target="_blank" rel="noopener" class="tag tag-gray">Eleanor Mascarenhas</a>
+              <a href="https://github.com/heba-rah" target="_blank" rel="noopener" class="tag tag-gray">Heba Rahmathulla</a>
+              <a href="https://github.com/nanicrio" target="_blank" rel="noopener" class="tag tag-gray">Nathalie Rios</a>
             </div>
           </div>
 
