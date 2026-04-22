@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certifications | Venkata Adapala</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Cert detail layout ── */
+      .cert-detail-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .cert-detail-card:hover {
+        border-color: rgba(79, 158, 255, 0.4);
+        box-shadow: var(--shadow), var(--glow-blue);
+      }
+
+      .cert-detail-top {
+        position: relative;
+      }
+      .cert-detail-top::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--teal));
+      }
+      .cert-detail-card.oracle .cert-detail-top::before {
+        background: linear-gradient(90deg, #c74634, var(--purple));
+      }
+
+      .cert-detail-body {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 0;
+      }
+
+      .cert-badge-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2.5rem 1.5rem 2rem;
+        border-right: 1px solid var(--border-soft);
+        gap: 1.25rem;
+      }
+      .cert-badge-img {
+        width: 140px;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 16px rgba(79, 158, 255, 0.2));
+        transition: transform 0.3s, filter 0.3s;
+      }
+      .cert-detail-card.oracle .cert-badge-img {
+        filter: drop-shadow(0 4px 16px rgba(199, 70, 52, 0.2));
+      }
+      .cert-badge-img:hover {
+        transform: scale(1.04);
+      }
+      .cert-verify-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 7px 14px;
+        border-radius: 20px;
+        text-decoration: none;
+        background: rgba(79, 158, 255, 0.1);
+        border: 1px solid rgba(79, 158, 255, 0.25);
+        color: var(--accent);
+        transition: background 0.2s, border-color 0.2s;
+        text-align: center;
+      }
+      .cert-verify-btn:hover {
+        background: rgba(79, 158, 255, 0.2);
+        border-color: var(--accent);
+      }
+      .cert-detail-card.oracle .cert-verify-btn {
+        background: rgba(199, 70, 52, 0.1);
+        border-color: rgba(199, 70, 52, 0.25);
+        color: #e05c44;
+      }
+      .cert-detail-card.oracle .cert-verify-btn:hover {
+        background: rgba(199, 70, 52, 0.2);
+        border-color: #c74634;
+      }
+
+      .cert-info-col {
+        padding: 2.5rem 2rem 2rem;
+      }
+      .cert-detail-issuer {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+      .cert-detail-card.oracle .cert-detail-issuer { color: #e05c44; }
+
+      .cert-detail-title {
+        font-family: var(--font-head);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.3rem;
+        line-height: 1.25;
+      }
+      .cert-detail-date {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 1.25rem;
+      }
+      .cert-detail-desc {
+        font-size: 0.95rem;
+        color: var(--text-dim);
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+      }
+
+      .cert-domains-heading {
+        font-family: var(--font-head);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.85rem;
+      }
+      .cert-detail-card.oracle .cert-domains-heading { color: #e05c44; }
+
+      .domain-list {
+        list-style: none;
+        display: grid;
+        gap: 0.6rem;
+      }
+      .domain-list li {
+        position: relative;
+        padding-left: 1.25rem;
+        font-size: 0.875rem;
+        color: var(--text-dim);
+        line-height: 1.5;
+      }
+      .domain-list li::before {
+        content: '▸';
+        color: var(--teal);
+        position: absolute;
+        left: 0;
+        top: 0.175em;
+      }
+      .cert-detail-card.oracle .domain-list li::before { color: #e05c44; }
+      .domain-list li strong { color: var(--text); }
+
+      /* Responsive: stack on small screens */
+      @media (max-width: 640px) {
+        .cert-detail-body {
+          grid-template-columns: 1fr;
+        }
+        .cert-badge-col {
+          border-right: none;
+          border-bottom: 1px solid var(--border-soft);
+          padding: 2rem 1.5rem 1.5rem;
+          flex-direction: row;
+          justify-content: flex-start;
+          gap: 1.5rem;
+        }
+        .cert-badge-img { width: 100px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar">
+      <a class="nav-logo" href="index.html">Venkata<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="assets/Resume.pdf" class="nav-resume" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="page-wrapper">
+
+      <!-- ── PAGE HERO ── -->
+      <div class="page-hero">
+        <p class="page-hero-eyebrow">Industry Recognition</p>
+        <h1 class="page-hero-title"><em>Certifications</em></h1>
+        <p class="page-hero-sub">
+          Vendor-issued credentials validating my knowledge of cloud infrastructure and
+          object-oriented programming with Java.
+        </p>
+      </div>
+
+      <!-- ════════════════════════════════════════════
+           CERTIFICATIONS
+           ════════════════════════════════════════════ -->
+      <section class="section">
+
+        <!-- ── AWS Certified Cloud Practitioner ── -->
+        <article class="cert-detail-card reveal">
+          <div class="cert-detail-top"></div>
+          <div class="cert-detail-body">
+
+            <div class="cert-badge-col">
+              <img
+                src="assets/images/AWSCP.png"
+                alt="AWS Certified Cloud Practitioner badge"
+                class="cert-badge-img"
+              />
+              <a
+                href="https://www.credly.com/badges/1d6ad7a2-d130-4144-a106-b67f6eaf83ff/public_url"
+                target="_blank"
+                rel="noopener"
+                class="cert-verify-btn"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Verify on Credly
+              </a>
+            </div>
+
+            <div class="cert-info-col">
+              <p class="cert-detail-issuer">Amazon Web Services</p>
+              <h2 class="cert-detail-title">AWS Certified Cloud Practitioner</h2>
+              <p class="cert-detail-date">Issued January 2026</p>
+
+              <p class="cert-detail-desc">
+                The AWS Certified Cloud Practitioner (CLF-C02) is a globally recognized
+                foundational credential issued by <strong>Amazon Web Services</strong>.
+                It validates an understanding of the AWS Cloud as a whole, covering
+                core services, the shared responsibility security model, pricing structures,
+                support plans, and architectural best practices. It is the entry point to
+                the AWS certification pathway and is recognized across the industry as
+                proof of cloud fluency.
+              </p>
+
+              <p class="cert-domains-heading">Exam Domains Covered</p>
+              <ul class="domain-list">
+                <li>
+                  <strong>Cloud Concepts (24%)</strong>: AWS Cloud value proposition,
+                  the Well-Architected Framework, cloud economics and migration strategies,
+                  and the benefits of global infrastructure (regions, AZs, edge locations).
+                </li>
+                <li>
+                  <strong>Security &amp; Compliance (30%)</strong>: the shared
+                  responsibility model, IAM (users, groups, roles, policies), AWS security
+                  services (Shield, WAF, Inspector, GuardDuty), compliance programs, and
+                  encryption at rest and in transit.
+                </li>
+                <li>
+                  <strong>Cloud Technology &amp; Services (34%)</strong>: core compute
+                  (EC2, Lambda, ECS), storage (S3, EBS, EFS, Glacier), databases (RDS, DynamoDB,
+                  Redshift), networking (VPC, CloudFront, Route 53), and developer tools
+                  (CloudFormation, CodePipeline, Elastic Beanstalk).
+                </li>
+                <li>
+                  <strong>Billing, Pricing &amp; Support (12%)</strong>: pricing models
+                  (On-Demand, Reserved, Spot, Savings Plans), AWS Cost Explorer, Budgets, the
+                  Total Cost of Ownership calculator, and support plan tiers.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Oracle Certified Associate, Java SE 8 ── -->
+        <article class="cert-detail-card oracle reveal">
+          <div class="cert-detail-top"></div>
+          <div class="cert-detail-body">
+
+            <div class="cert-badge-col">
+              <img
+                src="assets/images/OCAJSE8.png"
+                alt="Oracle Certified Associate Java SE 8 Programmer badge"
+                class="cert-badge-img"
+              />
+              <a
+                href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DC06C202E5893F1482C2C084CE3075642F5B4B09B7A5D0A1B946CA68EA220D0"
+                target="_blank"
+                rel="noopener"
+                class="cert-verify-btn"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Verify on Oracle
+              </a>
+            </div>
+
+            <div class="cert-info-col">
+              <p class="cert-detail-issuer">Oracle</p>
+              <h2 class="cert-detail-title">Oracle Certified Associate, Java SE 8 Programmer</h2>
+              <p class="cert-detail-date">Issued July 2025</p>
+
+              <p class="cert-detail-desc">
+                The Oracle Certified Associate, Java SE 8 Programmer (1Z0-808) is a
+                vendor-issued credential from <strong>Oracle Corporation</strong> that
+                validates proficiency in the Java SE 8 programming language. It covers
+                object-oriented design principles, core Java APIs, and language-level
+                features introduced in Java 8. It serves as the first step in Oracle&rsquo;s
+                Java certification pathway and demonstrates a solid, exam-verified command
+                of Java fundamentals.
+              </p>
+
+              <p class="cert-domains-heading">Exam Domains Covered</p>
+              <ul class="domain-list">
+                <li>
+                  <strong>Java Basics</strong>: defining the scope of variables,
+                  structure of a Java class, the <code>main</code> method, importing
+                  packages, and understanding the Java class path.
+                </li>
+                <li>
+                  <strong>Data Types &amp; String APIs</strong>: primitive types,
+                  wrapper classes, autoboxing, the <code>String</code>,
+                  <code>StringBuilder</code>, and <code>ArrayList</code> APIs, and casting.
+                </li>
+                <li>
+                  <strong>Operators &amp; Decision Constructs</strong>: operator
+                  precedence, equality vs. identity for objects, <code>if</code>,
+                  <code>if/else</code>, ternary, and <code>switch</code> statements.
+                </li>
+                <li>
+                  <strong>Arrays &amp; Loop Constructs</strong>: one- and
+                  multi-dimensional arrays, <code>for</code>, enhanced <code>for</code>,
+                  <code>while</code>, <code>do/while</code>, <code>break</code>, and
+                  <code>continue</code>.
+                </li>
+                <li>
+                  <strong>Methods &amp; Encapsulation</strong>: method overloading,
+                  static vs. instance methods, access modifiers, <code>this</code> keyword,
+                  constructors, and JavaBeans naming conventions.
+                </li>
+                <li>
+                  <strong>Inheritance &amp; Polymorphism</strong>: extending classes,
+                  overriding methods, the <code>super</code> keyword, abstract classes,
+                  interfaces, and casting reference types.
+                </li>
+                <li>
+                  <strong>Exception Handling</strong>: checked vs. unchecked exceptions,
+                  <code>try/catch/finally</code>, multi-catch, and common exception classes
+                  in the Java SE 8 API.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </div><!-- /page-wrapper -->
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <div class="footer-name">Venkata Maruthi Sowmyanath Adapala</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="https://github.com/AvianSilk" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/venkata-adapala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:avmsowmyanath8@gmail.com">Email</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; PDF</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Venkata Adapala</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
