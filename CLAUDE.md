@@ -9,7 +9,7 @@ A personal portfolio website for Venkata Maruthi Sowmyanath Adapala, hosted via 
 | `index.html` | All page content. Single-page layout with a fixed sidebar and scrollable main area. |
 | `style.css` | All styling. Sidebar, card layout, responsive breakpoints. |
 | `script.js` | Minor JS: auto-sets copyright year, mobile sidebar toggle. |
-| `assets/images/Headshot.jpg` | Profile photo used in the sidebar. |
+| `assets/images/Headshot.jpeg` | Profile photo used in the sidebar. |
 
 ## Content source of truth
 The resume PDF (kept locally, not committed) is the authoritative source for content. When the resume is updated, `index.html` must be updated to match. Sections map as follows:
